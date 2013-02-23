@@ -1,0 +1,62 @@
+<?php
+	include("../conf/config.php");
+	
+	$coid = $HTTP_COOKIE_VARS[$randomstr];
+	if($coid == 0) {
+		header ("Location: login.php");
+		exit;
+	}
+	
+	$qry = "SELECT * FROM ships WHERE co=" . $coid;
+	$shipqry = mysql_query($qry,$link) or die("Can't perform ship's query");
+	$ship = mysql_fetch_row($shipqry);
+	
+	$qry = "SELECT email FROM co WHERE id=" . $coid;
+	$coemailqry = mysql_query($qry,$link) or die("Can't get Co's email");
+	$coemail = mysql_fetch_row($coemailqry);
+	
+	$qry = "SELECT * FROM crewlist WHERE ship=" . $ship[0];
+	$crewqry = mysql_query($qry,$link) or die("Can't perform crew's query");
+	$hascrew = mysql_num_rows($crewqry);
+	$crew = mysql_fetch_row($crewqry);
+	
+	$qry = "SELECT co FROM grp WHERE id=" . $ship[8];
+	$tgcoqry = mysql_query($qry,$link);
+	$tgco = mysql_fetch_row($tgcoqry);
+
+	$qry = "SELECT email FROM co WHERE id=" . $tgco[0];
+	$tgcoemailqry = mysql_query($qry,$link) or die(mysql_error());
+	$tgcoemail = mysql_fetch_row($tgcoemailqry);
+	
+	$mailersubject= "Monthly Report for the " . $ship[1];
+	$mailerbody = "Ship Name: " . $ship[1] . "\n";
+	$mailerbody = $mailerbody . "Ship's Website: " . $ship[4] . "\n";
+	$mailerbody = $mailerbody . "Ship's Status: " . $ship[9] . "\n";
+	$mailerbody .= "\n\nCrew List:\n";
+	
+	while ($crew != 0){
+	
+		$qry = "SELECT rankdesc FROM rank WHERE rankid=" . $crew[3];
+		$rankqry = mysql_query($qry,$link) or die("Didn't get the rank");
+		$rank = mysql_fetch_row($rankqry);
+		
+		$mailerbody = $mailerbody . $rank[0] . " " . $crew[2] . "\n" . $crew[5] . "\n" . $crew[4] . "\n\n";
+		
+		$crew = mysql_fetch_row($crewqry);
+	}
+	
+	$mailerbody = $mailerbody . "\nShip Awards:\n " . $shipawards . "\n\n";
+	$mailerbody = $mailerbody . "Crew Promotions:\n " . $promotions . "\n\n";
+	$mailerbody = $mailerbody . "Website Changes:\n " . $websiteupdates . "\n\n";
+	
+	$header = "From: " . $coemail[0]; 
+
+	$mailerto = "$TFCOEmail , $TFXOEmail , $tgcoemail[0] , $coemail[0]";
+
+	mail ($mailerto, $mailersubject, $mailerbody, $header);
+//	echo $mailerto;	
+	echo "<H2>You report has been submitted to the Admiral.</H2>";
+	echo "<a href='$BaseURL/co/switchboard.php'>RETURN</a>";
+	
+	mysql_close($link);
+?>

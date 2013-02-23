@@ -1,0 +1,24 @@
+a:link		{ font-family: Helvetica, Arial, san-serif; color: #FFCC66; font-size: 10pt; text-decoration: none; }
+a:visited	{ font-family: Helvetica, Arial, san-serif; color: #999999; font-size: 10pt; text-decoration: none; }
+a:active	{ font-family: Helvetica, Arial, san-serif; color: #FFFFFF; font-size: 10pt; text-decoration: none; }
+a:hover		{ font-family: Helvetica, Arial, san-serif; color: #FFCC99; font-size: 10pt; text-decoration: underline; }
+body 		{ font-family: Helvetica, Arial, san-serif; color: #CCCCCC; font-size: 10pt; background: #000000; }
+p		{ font-size: 11pt; font-family: Helvetica, Arial, san-serif; }
+li		{ font-size: 11pt; font-family: Helvetica, Arial, san-serif; }
+
+.buttonbox	{ border: #999999 1px solid; }
+.title1		{ font-family: Helvetica, Arial, san-serif; color: #CC0000; font-size: 10pt; font-weight: bold; }
+.title2		{ font-family: Helvetica, Arial, san-serif; color: #FFCC66; font-size: 10pt; font-weight: bold; }
+.title3		{ font-family: Helvetica, Arial, san-serif; color: #FFCC00; font-size: 10pt; font-weight: bold; }
+.title4		{ font-family: Helvetica, Arial, san-serif; color: #FFCC00; font-size: 20pt; font-weight: bold; }
+.footer		{ font-family: Helvetica, Arial, san-serif; color: #CCCCCC; font-size: 9pt; }
+
+.shipname	{ font-family: Helvetica, Arial, san-serif; color: #FFCC00; }
+.groupname	{ font-family: Helvetica, Arial, san-serif; color: #FFCC66; font-weight: bold; }
+.coname		{ font-family: Helvetica, Arial, san-serif; color: #FFCC66; }
+.SB_header	{ font-family: Helvetica, Arial, san-serif; color: #000000; background:#CCCCCC; }
+.SB_title	{ font-family: Helvetica, Arial, san-serif; color: #000000; background:#CCCCCC; font-weight: bold; }
+.ShipInactive	{ font-family: Helvetica, Arial, san-serif; color: #FF0000; font-weight: bold; }
+.coemail	{ font-family: Helvetica, Arial, san-serif; color: #CCCCCC; font-size: 10pt; }
+.mission	{ font-family: Helvetica, Arial, san-serif; color: #CCCCCC; font-size: 10pt; }
+
