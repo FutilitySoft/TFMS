@@ -1,9 +1,3 @@
--- MySQL dump 8.21
---
--- Host: localhost    Database: tf72
----------------------------------------------------------
--- Server version	3.23.49a
-
 --
 -- Table structure for table 'announce'
 --
@@ -14,7 +8,7 @@ CREATE TABLE announce (
   txt text NOT NULL,
   postedby int(11) NOT NULL default '0',
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'announce'
@@ -41,7 +35,7 @@ CREATE TABLE co (
   tfrole varchar(75) default NULL,
   admin int(11) NOT NULL default '0',
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'co'
@@ -62,8 +56,7 @@ CREATE TABLE crewlist (
   email varchar(40) NOT NULL default '',
   position varchar(40) NOT NULL default '',
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
-
+);
 --
 -- Dumping data for table 'crewlist'
 --
@@ -79,7 +72,7 @@ CREATE TABLE grp (
   flagship int(11) NOT NULL default '0',
   co int(11) NOT NULL default '0',
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'grp'
@@ -103,7 +96,7 @@ CREATE TABLE mco (
   rank int(11) NOT NULL default '0',
   email varchar(40) NOT NULL default '',
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'mco'
@@ -123,7 +116,7 @@ CREATE TABLE monthrep (
   promotions text,
   updates text,
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'monthrep'
@@ -139,7 +132,7 @@ CREATE TABLE rank (
   rankdesc text,
   image text,
   color text
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'rank'
@@ -345,7 +338,7 @@ CREATE TABLE ships (
   lastmreport datetime default NULL,
   shiprole varchar(50) default NULL,
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'ships'
@@ -363,10 +356,8 @@ CREATE TABLE xo (
   email varchar(40) NOT NULL default '',
   password varchar(20) NOT NULL default '',
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'xo'
 --
-
-
